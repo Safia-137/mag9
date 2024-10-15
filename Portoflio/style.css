@@ -1,0 +1,230 @@
+/* General Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #101010;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, p {
+  color: #fff;
+}
+
+/* Header Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: #000000;
+  background-image: url('https://img.freepik.com/free-vector/realistic-neon-lights-background_52683-60202.jpg'); /* Add your background image */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Overlay for darker effect */
+  z-index: 0;
+}
+
+.hero-text {
+  z-index: 1;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 4px 8px rgba(0, 255, 255, 0.5);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(255, 0, 255, 0.5);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 5px rgba(0, 255, 128, 0.7);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-text {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Neon Button */
+.neon-btn {
+  background-color: transparent;
+  padding: 15px 30px;
+  border: 2px solid #0ff;
+  border-radius: 50px;
+  color: #0ff;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #0ff, #f0f);
+  filter: blur(5px);
+  z-index: -1;
+  transition: filter 0.3s ease;
+}
+
+.neon-btn:hover {
+  color: #000;
+}
+
+.neon-btn:hover::before {
+  filter: blur(10px);
+}
+
+/* Neon Animated Background Section */
+.neon-background {
+  height: 50vh; /* Set height for background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #111, #222);
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-background::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.2) 0%, rgba(0, 255, 255, 0) 100%);
+  filter: blur(30px);
+  animation: pulse 10s infinite alternate;
+  z-index: 0;
+}
+
+.neon-heading {
+  position: relative;
+  color: #0ff;
+  font-size: 2.5rem;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+               0 0 40px rgba(0, 255, 255, 0.8),
+               0 0 80px rgba(0, 255, 255, 0.6);
+}
+
+/* Pulsing Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* Portfolio Section */
+/* Portfolio Section */
+/* Portfolio Section */
+.portfolio-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #121212; /* Subtle dark background */
+  border-top: 5px solid rgba(0, 255, 255, 0.8); /* Neon top border */
+  border-bottom: 5px solid rgba(0, 255, 255, 0.8); /* Neon bottom border */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Glow effect for the section */
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 8px rgba(255, 255, 0, 0.7); /* Text shadow for heading */
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive column layout */
+  gap: 20px;
+}
+
+.portfolio-item {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Neon glow for item */
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.portfolio-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s; /* Smooth image hover transition */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.7); /* Glow effect on hover */
+}
+
+.portfolio-image:hover {
+  transform: scale(1.1); /* Image grows on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-section h2 {
+    font-size: 2rem; /* Smaller heading for mobile */
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
+    gap: 10px; /* Reduced gap on mobile */
+  }
+}
